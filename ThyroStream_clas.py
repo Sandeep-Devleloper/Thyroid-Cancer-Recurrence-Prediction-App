@@ -12,7 +12,7 @@ input_data3=input_data2.reshape(1,-1)
 class_prediction=rf_class.predict(input_data3)
 print("/n",class_prediction)
 if class_prediction[0]==0:
-    print("It can be cured")
-else:print("it cant be cured")
+    print("No chances of getting cancer again 😇😇")
+else:print("Chances of Getting cancer again !!!!!!!! 🤧🤧")
 # print(f"the chances of curing it is : {reg_prediction}%")
 
