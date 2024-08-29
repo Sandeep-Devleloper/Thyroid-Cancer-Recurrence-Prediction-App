@@ -1,7 +1,6 @@
 import numpy as np
 import pickle
 import streamlit as st
-import sklearn
 # Load the model
 model = pickle.load(open("Thyrostream_clas.sav", "rb"))
 
