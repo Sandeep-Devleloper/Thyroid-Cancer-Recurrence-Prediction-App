@@ -3,7 +3,7 @@ import pickle
 from sklearn.ensemble import RandomForestClassifier
 print("Started clas.....")
 
-rf_class=load_model=pickle.load(open("G:/Workspace-ML/MLProjects/Thyrostream_clas.sav","rb"))
+rf_class=load_model=pickle.load(open("Thyrostream_clas.sav","rb"))
 
 input_data=(0,1,0,0,1,1,54,1,1,0,0)
 input_data2=np.array(input_data)
