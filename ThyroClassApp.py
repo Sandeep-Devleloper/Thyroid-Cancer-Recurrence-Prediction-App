@@ -1,7 +1,7 @@
 import numpy as np
 import pickle
 import streamlit as st
-
+import sklearn
 # Load the model
 model = pickle.load(open("Thyrostream_clas.sav", "rb"))
 
@@ -20,21 +20,21 @@ def classify(input_data):
 
 def main():
     # Use triple quotes for multi-line string
-    st.markdown(
-        """
-        <style>
-            body {
-                background-image: url('G:\Workspace-ML\MLProjects\Galaxy Wallpaper Hd wallpaper   1244508.jpg');
-                background-size: cover;
-                background-position: center;
-                color: white; 
-            }"""
-        , 
-        unsafe_allow_html=True
-    )
+    # st.markdown(
+    #     """
+    #     <style>
+    #         body {
+    #             background-image: url('G:\Workspace-ML\MLProjects\Galaxy Wallpaper Hd wallpaper   1244508.jpg');
+    #             background-size: cover;
+    #             background-position: center;
+    #             color: white; 
+    #         }"""
+    #     , 
+    #     unsafe_allow_html=True
+    # )
     
-    # Use glassmorphic class for container
-    st.markdown('<div class="glassmorphic">', unsafe_allow_html=True)
+    # # Use glassmorphic class for container
+    # st.markdown('<div class="glassmorphic">', unsafe_allow_html=True)
 
     st.title("Let's Analyze The Condition to Check the Chances of Getting Cancer Again")
 
@@ -74,7 +74,7 @@ def main():
                                Stage_I])
             st.success(result)
 
-    st.markdown('</div>', unsafe_allow_html=True)
+    # st.markdown('</div>', unsafe_allow_html=True)
 
 if __name__ == '__main__':
     main()
