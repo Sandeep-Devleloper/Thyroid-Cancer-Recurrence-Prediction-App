@@ -3,7 +3,7 @@ import pickle
 import streamlit as st
 
 # Load the model
-model = pickle.load(open("G:/Workspace-ML/MLProjects/Thyrostream_clas.sav", "rb"))
+model = pickle.load(open("Thyrostream_clas.sav", "rb"))
 
 def classify(input_data):
     input_data2 = np.array(input_data)
