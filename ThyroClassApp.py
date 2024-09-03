@@ -51,7 +51,7 @@ def main():
     Response_Indeterminate = 1 if response == "Moderate" else 0
     Response_Excellent = 1 if response == "Positive" else 0
 
-    with col2::
+    with col2:
         adenopathy = st.radio('Any swelling or abnormality near lymph nodes:', ["Yes", "No"], key="adenopathy")
         Adenopathy_No = 1 if adenopathy == "No" else 0
     
