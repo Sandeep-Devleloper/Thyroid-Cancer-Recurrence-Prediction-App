@@ -42,9 +42,7 @@ def main():
             prediction=prediction[0]
             return_prediction=f"{prediction*100:.0f}%  Chance of Getting cancer again !!!!!!!! 🤧🤧"
             return return_prediction#f"{prediction:.2f}%"
-    
-    
-            Age = st.number_input("Age", min_value=3, step=1)
+        Age = st.number_input("Age", min_value=3, step=1)
 
     response = st.radio("Response to medication", ["Positive", "Moderate", "Diagnosis not completed"], key="response")
     Response_Structural_Incomplete = 1 if response == "Diagnosis not completed" else 0
