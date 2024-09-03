@@ -68,7 +68,7 @@ def main():
         Risk_High = 1 if risk == "High" else 0
 
     result = ""
-        with col3:
+    with col3:
         if st.button("Check"):
             if method=="classification":
                 result = classify([Response_Structural_Incomplete, Response_Indeterminate, Response_Excellent,
