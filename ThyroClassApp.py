@@ -12,7 +12,7 @@ def main():
     with col1:
 
         st.title("Let's Analyze The Condition")
-        st.subheader("to Check the Chances of Getting Thyroid Cancer Again")
+        st.write("to Check the Chances of Getting Thyroid Cancer Again")
     
         method=st.selectbox("Prediction Method",["classification","Regression"])
 
