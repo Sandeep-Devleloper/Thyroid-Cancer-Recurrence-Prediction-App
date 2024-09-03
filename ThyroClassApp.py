@@ -44,10 +44,10 @@ def main():
             return return_prediction#f"{prediction:.2f}%"
         Age = st.number_input("Age", min_value=3, step=1)
 
-    response = st.radio("Response to medication", ["Positive", "Moderate", "Diagnosis not completed"], key="response")
-    Response_Structural_Incomplete = 1 if response == "Diagnosis not completed" else 0
-    Response_Indeterminate = 1 if response == "Moderate" else 0
-    Response_Excellent = 1 if response == "Positive" else 0
+        response = st.radio("Response to medication", ["Positive", "Moderate", "Diagnosis not completed"], key="response")
+        Response_Structural_Incomplete = 1 if response == "Diagnosis not completed" else 0
+        Response_Indeterminate = 1 if response == "Moderate" else 0
+        Response_Excellent = 1 if response == "Positive" else 0
 
     with col2:
         adenopathy = st.radio('Any swelling or abnormality near lymph nodes:', ["Yes", "No"], key="adenopathy")
