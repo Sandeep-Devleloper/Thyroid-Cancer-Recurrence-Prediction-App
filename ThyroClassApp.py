@@ -34,8 +34,8 @@ def predict(input_data):
 
 def main():
 
-    st.title("Let's Analyze The Condition to Check the Chances of Getting Thyroid Cancer Again")
-
+    st.title("Let's Analyze The Condition")
+    st.subheader("to Check the Chances of Getting Thyroid Cancer Again")
     Age = st.number_input("Age", min_value=3, step=1)
 
     response = st.radio("Response to medication", ["Positive", "Moderate", "Diagnosis not completed"], key="response")
