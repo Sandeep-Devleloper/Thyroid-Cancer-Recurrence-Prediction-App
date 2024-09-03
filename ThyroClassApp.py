@@ -1,43 +1,42 @@
 import numpy as np
 import pickle
 import streamlit as st
-# Load the model
-model = pickle.load(open("Thyrostream_clas.sav", "rb"))
+method=" "
 
+method=st.selectbox("Prediction Method",["classification","Regression"])
+
+if method=="classification":
+    model=pickle.load(open("G:/Workspace-ML/MLProjects/RFC.sav", "rb"))
+
+elif method=="Regression":
+    model=pickle.load(open("G:\Workspace-ML\MLProjects\RFRnestmaxdep80.sav","rb"))
 def classify(input_data):
     input_data2 = np.array(input_data)
     input_data3 = input_data2.reshape(1, -1)
     
-    # Use the loaded model for prediction
     class_prediction = model.predict(input_data3)
-    st.write("\n", class_prediction)  # Changed to st.write() for Streamlit output
+    st.write("\n", class_prediction)
 
     if class_prediction[0] == 0:
         return "No chances of getting cancer again 😇😇"
     else:
         return "Chances of Getting cancer again !!!!!!!! 🤧🤧"
 
-def main():
-    # Use triple quotes for multi-line string
-    # st.markdown(
-    #     """
-    #     <style>
-    #         body {
-    #             background-image: url('G:\Workspace-ML\MLProjects\Galaxy Wallpaper Hd wallpaper   1244508.jpg');
-    #             background-size: cover;
-    #             background-position: center;
-    #             color: white; 
-    #         }"""
-    #     , 
-    #     unsafe_allow_html=True
-    # )
+def predict(input_data):
+    input_data2 = np.array(input_data)
+    input_data3 = input_data2.reshape(1, -1)
     
-    # # Use glassmorphic class for container
-    # st.markdown('<div class="glassmorphic">', unsafe_allow_html=True)
+    prediction = model.predict(input_data3)
+    #st.write(f"chances of getting cancer again is :{prediction[0]}%")  
+    prediction=prediction[0]
+    return_prediction=f"{prediction*100:.0f}%  Chance of Getting cancer again !!!!!!!! 🤧🤧"
+    return return_prediction#f"{prediction:.2f}%"
+
+def main():
 
     st.title("Let's Analyze The Condition to Check the Chances of Getting Cancer Again")
 
-    Age = st.number_input("Age", min_value=1, step=1)
+    Age = st.number_input("Age", min_value=3, step=1)
 
     response = st.radio("Response to medication", ["Positive", "Moderate", "Diagnosis not completed"], key="response")
     Response_Structural_Incomplete = 1 if response == "Diagnosis not completed" else 0
@@ -60,20 +59,23 @@ def main():
     Risk_High = 1 if risk == "High" else 0
 
     result = ""
-
-    if st.button("Predict"):
-        # Check if Age is provided
-        if Age < 1:  # Assuming age can't be zero for a valid patient
-            st.error("Please enter a valid age greater than zero.")
-        else:
+    
+    if st.button("Check"):
+        if method=="classification":
             result = classify([Response_Structural_Incomplete, Response_Indeterminate, Response_Excellent,
                                Nodes_N0, Nodes_N1b,
                                Age, Adenopathy_No,
                                Risk_High, Risk_Intermediate, Risk_Low,
                                Stage_I])
             st.success(result)
-
-    # st.markdown('</div>', unsafe_allow_html=True)
+        elif method=="Regression":
+            result = predict([Response_Structural_Incomplete, Response_Indeterminate, Response_Excellent,
+                               Nodes_N0, Nodes_N1b,
+                               Age, Adenopathy_No,
+                               Risk_High, Risk_Intermediate, Risk_Low,
+                               Stage_I])
+            st.success(result)
+        #else:st.error("Must select a model")
 
 if __name__ == '__main__':
     main()
