@@ -6,10 +6,12 @@ method=" "
 method=st.selectbox("Prediction Method",["classification","Regression"])
 
 if method=="classification":
-    model=pickle.load(open("G:/Workspace-ML/MLProjects/RFC.sav", "rb"))
+    model=pickle.load(open("RandomforestClassifier.sav
+", "rb"))
 
 elif method=="Regression":
-    model=pickle.load(open("G:\Workspace-ML\MLProjects\RFRnestmaxdep80.sav","rb"))
+    model=pickle.load(open("RandomforestRegressor.sav
+","rb"))
 def classify(input_data):
     input_data2 = np.array(input_data)
     input_data3 = input_data2.reshape(1, -1)
