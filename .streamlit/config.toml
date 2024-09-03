@@ -1,5 +1,5 @@
 
-base="dark"
+[base="dark"
 primaryColor="#0cf5c8"
 backgroundColor="#101010"
-secondaryBackgroundColor="#282828"
+secondaryBackgroundColor="#282828"]
