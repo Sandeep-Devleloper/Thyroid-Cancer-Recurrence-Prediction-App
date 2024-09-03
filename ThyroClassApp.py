@@ -15,7 +15,7 @@ def classify(input_data):
     input_data3 = input_data2.reshape(1, -1)
     
     class_prediction = model.predict(input_data3)
-    st.write("\n", class_prediction)
+    #st.write("\n", class_prediction)
 
     if class_prediction[0] == 0:
         return "No chances of getting cancer again 😇😇"
