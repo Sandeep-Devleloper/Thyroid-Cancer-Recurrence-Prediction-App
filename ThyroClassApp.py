@@ -53,14 +53,14 @@ def main():
         adenopathy = st.radio('Any swelling or abnormality near lymph nodes:', ["Yes", "No"], key="adenopathy")
         Adenopathy_No = 1 if adenopathy == "No" else 0
     
-        stage = st.radio("Cancer stage", [1, 2, 3], key="stage")
+        stage = st.radio("Whats the Cancer stage", [1, 2, 3], key="stage")
         Stage_I = 1 if stage == 1 else 0
     
         spread = st.radio("Any indication of the cancer has spread to the lymph nodes", ["Yes", "No"], key="spread")
         Nodes_N0 = 1 if spread == "No" else 0
         Nodes_N1b = 1 if spread == "Yes" else 0
     
-        risk = st.radio('Risk of getting it again:', ['High', "Intermediate", 'Low'], key="risk")
+        risk = st.radio('From previous diagnosis results,Risk of getting it again:', ['High', "Intermediate", 'Low'], key="risk")
         Risk_Low = 1 if risk == "Low" else 0
         Risk_Intermediate = 1 if risk == "Intermediate" else 0
         Risk_High = 1 if risk == "High" else 0
