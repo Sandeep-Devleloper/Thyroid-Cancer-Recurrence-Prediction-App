@@ -1,7 +1,7 @@
 import numpy as np
 import pickle
 import streamlit as st
-st.set_page_config(layout="wide")
+st.set_page_config(page_title="Thyroid Recurring Prediction.net", page_icon="✨", layout="wide")
 col1,col2,col3=st.columns([1.5,1,1])
 
 method=" "
