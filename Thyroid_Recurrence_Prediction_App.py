@@ -80,6 +80,8 @@ def main():
                                 Age, Adenopathy_No,
                                 Risk_High, Risk_Intermediate, Risk_Low,
                                 Stage_I])
+                if result<30:
+                    result="Chance of Getting cancer again"
                 st.success(result)
             #else:st.error("Must select a model")
 
