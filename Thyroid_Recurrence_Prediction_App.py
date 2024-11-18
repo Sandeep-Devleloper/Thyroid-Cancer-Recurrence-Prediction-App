@@ -36,7 +36,9 @@ def main():
             prediction = model.predict(input_data3)
             #st.write(f"chances of getting cancer again is :{prediction[0]}%")  
             prediction=prediction[0]
-            return_prediction=f"{prediction*100:.0f}%  Chance of Getting cancer again !!!!!!!! 🤧🤧"
+            if result < 30:
+                    result="NO Chance of Getting cancer again"
+            else:return_prediction=f"{prediction*100:.0f}%  Chance of Getting cancer again !!!!!!!! 🤧🤧"
             return return_prediction#f"{prediction:.2f}%"
 
         Age = st.number_input("Age", min_value=3,max_value=110, step=1)
@@ -80,10 +82,8 @@ def main():
                                 Age, Adenopathy_No,
                                 Risk_High, Risk_Intermediate, Risk_Low,
                                 Stage_I])
-                if result<30:
-                    result="Chance of Getting cancer again"
+                
                 st.success(result)
-            #else:st.error("Must select a model")
 
 if __name__ == '__main__':
     main()
